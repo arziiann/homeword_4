@@ -1,38 +1,62 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
-    int arr[5] = {4, 10, 2, 3, 8};
-    int max = arr[0];
-    for(int i = 0; i < sizeof(arr) / sizeof(int); i++)
+    int arr[] = {900, 8, 3, 9, 803};
+    int max1 = arr[0];
+    for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
     {
-        if(arr[i] > max)
+        if (arr[i] > max1)
         {
-            max = arr[i];
-            
+            max1 = arr[i];
+        }
+        
+    }
+
+    printf("max1 -- > %i ", max1);
+
+    int max2 = 0;
+    for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
+    {
+        if (arr[i] != max1)
+        {
+            max2 = arr[i];
+            break;
         }
         
     }
     
-    int max_2 = arr[0];
-    for(int i = 0; i < sizeof(arr) / sizeof(int); i++)
+    for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
     {
-        if(arr[i] != max && arr[i] > max_2)
+        if (arr[i] != max1 && arr[i] > max2)
         {
-            max_2 = arr[i];
+            max2 = arr[i];
         }
+        
     }
+    printf("max2 -- > %i ", max2);
 
-    int max_3 = arr[0];
-    for(int i = 0; i < sizeof(arr) / sizeof(int); i++)
+    int max3 = 0;
+    for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
     {
-        if(arr[i] != max && arr[i] != max_2 && arr[i] > max_3)
+        if (arr[i] != max1 && arr[i] != max2)
         {
-            max_3 = arr[i];
+            max3 = arr[i];
+            break;
         }
-
-
+        
     }
-    printf("%i", max_3);
+    
+    for (int i = 0; i < sizeof(arr) / sizeof(int); i++)
+    {
+        if (arr[i] != max1 && arr[i] != max2 && arr[i] > max3)
+        {
+            max3 = arr[i];
+        }
+        
+    }
+    printf("max3 -- > %i ", max3);
+
+
+    
 }
