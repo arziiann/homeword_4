@@ -6,6 +6,7 @@ int main()
 {
 	char array[] = "text";
 	printf("%i",  strlen_1(array));
+	
 }
 
 int strlen_1(const char* str)
